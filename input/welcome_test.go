@@ -5,5 +5,5 @@ import (
 )
 
 func TestWelcome(t *testing.T) {
-	welcome(nil)
+	(&WelcomeHandler{}).Handle(nil)
 }
