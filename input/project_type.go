@@ -32,8 +32,11 @@ func GetDefaultProjectType() (int8,string) {
 	return GITHUB_PROJECT_TYPE,projectTypes[GITHUB_PROJECT_TYPE]
 }
 
+type ProjectTypeInputHandler struct {
+}
+
 //init project type to Params with user input
-func initProjectType(params *Params)  {
+func (this *ProjectTypeInputHandler) Handle(params *Params)  {
 	fmt.Println("1.Choose your project type:")
 	for k,v :=range projectTypes{
 		fmt.Printf("%v) %s \n",k,v)

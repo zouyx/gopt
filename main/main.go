@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/zouyx/gopt/input"
 	"encoding/json"
+	"github.com/zouyx/gopt/param"
 )
 
 func main() {
-	param := input.GetAllParams()
-	bytes, _ := json.Marshal(param)
+	params := param.GetAllParams()
+	bytes, _ := json.Marshal(params)
 	fmt.Println("hello world!",string(bytes))
 }
