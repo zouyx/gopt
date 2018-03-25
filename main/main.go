@@ -3,11 +3,15 @@ package main
 import (
 	"fmt"
 	"encoding/json"
-	"github.com/zouyx/gopt/param"
+	"github.com/zouyx/gopt/component"
 )
 
 func main() {
-	params := param.GetAllParams()
+	//get params
+	params := component.GetAllParams()
 	bytes, _ := json.Marshal(params)
+
+	//build
+	component.BuildProject(params)
 	fmt.Println("hello world!",string(bytes))
 }
