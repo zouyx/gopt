@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	param := input.GetParam()
+	param := input.GetAllParams()
 	bytes, _ := json.Marshal(param)
 	fmt.Println("hello world!",string(bytes))
 }

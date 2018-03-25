@@ -11,11 +11,12 @@ var (
 func init() {
 	handlers=list.New()
 	handlers.PushBack(welcome)
-	handlers.PushBack(getProjectType)
+	handlers.PushBack(initProjectType)
 }
 
-func GetParam() *Params{
-	i, _ := getDefaultProjectType()
+// get all params for build project structure
+func GetAllParams() *Params{
+	i, _ := GetDefaultProjectType()
 	params:=&Params{
 		ProjectType:i,
 	}

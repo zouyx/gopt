@@ -5,9 +5,7 @@ import (
 	"os"
 )
 
-/**
-read line method
- */
+// read line method
 func readLine() (string,error) {
 	bio := bufio.NewReader(os.Stdin)
 	line, _, err := bio.ReadLine()
