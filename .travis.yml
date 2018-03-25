@@ -14,4 +14,5 @@ before_install:
 script:
     - chmod u+x coverage.sh
     - ./coverage.sh --coveralls
+    - pwd
     - go build -o "gopt" main/main.go
