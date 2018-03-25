@@ -37,7 +37,7 @@ type ProjectTypeInputHandler struct {
 
 //init project type to Params with user input
 func (this *ProjectTypeInputHandler) Handle(params *Params)  {
-	fmt.Println("1.Choose your project type:")
+	fmt.Println("2.Choose your project type:")
 	for k,v :=range projectTypes{
 		fmt.Printf("%v) %s \n",k,v)
 	}
@@ -48,7 +48,6 @@ func (this *ProjectTypeInputHandler) Handle(params *Params)  {
 		message.FormatError(func() {
 			fmt.Printf("cannot read your type , use %v) %v.",i,s)
 		})
-		return
 	}
 
 	projectType, err := strconv.Atoi(line)
@@ -58,7 +57,6 @@ func (this *ProjectTypeInputHandler) Handle(params *Params)  {
 		message.FormatError(func() {
 			fmt.Printf("cannot convert your type , use %v) %v.",i,s)
 		})
-		return
 	}
 
 	params.ProjectType=int8(projectType)

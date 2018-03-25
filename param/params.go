@@ -12,7 +12,8 @@ var (
 
 func init() {
 	handlers=list.New()
-	handlers.PushBack(input.Welcome)
+	handlers.PushBack((&input.WelcomeHandler{}).Handle)
+	handlers.PushBack((&input.ProjectNameInputHandler{}).Handle)
 	handlers.PushBack((&input.ProjectTypeInputHandler{}).Handle)
 }
 
