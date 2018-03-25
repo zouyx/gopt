@@ -15,8 +15,9 @@ func init() {
 }
 
 func GetParam() *Params{
+	i, _ := getDefaultProjectType()
 	params:=&Params{
-		ProjectType:1,
+		ProjectType:i,
 	}
 	for e := handlers.Front(); e != nil; e = e.Next() {
 		e.Value.(func(*Params))(params)
@@ -28,8 +29,8 @@ type Params struct {
 	/**
 	project type
 	0:custom
-	1:github
-	2:normal
+	1:normal
+	2:github
 	 */
 	ProjectType int8 `json:"project_type"`
 }
