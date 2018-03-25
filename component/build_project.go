@@ -13,6 +13,7 @@ var (
 func init() {
 	buildHandlers=list.New()
 	buildHandlers.PushBack((&build.DirBuilder{}).Build)
+	buildHandlers.PushBack((&build.MainFileBuilder{}).Build)
 }
 
 func BuildProject(params *input.Params) {
