@@ -45,7 +45,7 @@ func (this *MainFileBuilder) Build(params *input.Params) {
 	}
 	w.Flush()
 	f.Close()
-	
-	message.Success(fmt.Sprintf("created %v",mainFile))
+
+	message.Success(fmt.Sprintf("Created %v",mainFile))
 }
 
