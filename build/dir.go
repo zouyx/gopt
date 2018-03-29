@@ -7,15 +7,6 @@ import (
 	"github.com/zouyx/gopt/message"
 )
 
-const (
-	FULL_PATH ="%v/src/main"
-)
-
-// based input params get project full path
-func getFullPath(params *input.Params) string {
-	return fmt.Sprintf(FULL_PATH, params.ProjectName)
-}
-
 type DirBuilder struct {
 
 }

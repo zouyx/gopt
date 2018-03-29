@@ -2,10 +2,8 @@ package build
 
 import (
 	"github.com/zouyx/gopt/input"
-	"os"
 	"github.com/zouyx/gopt/message"
 	"fmt"
-	"bufio"
 )
 
 const (
@@ -29,22 +27,8 @@ type MainFileBuilder struct {
 func (this *MainFileBuilder) Build(params *input.Params) {
 	fullPath := getFullPath(params)
 	mainFile := fullPath + "/main.go"
-	f, err := os.Create(mainFile)
-	if err!=nil{
-		message.FormatError(func() {
-			panic(fmt.Sprintf("Create main.go fail! error:%v",err.Error()))
-		})
-	}
 
-	w := bufio.NewWriter(f) 
-	_, err = w.WriteString(fmt.Sprintf(MAIN_FILE_TEMPLATE,params.ProjectName))
-	if err!=nil{
-		message.FormatError(func() {
-			panic(fmt.Sprintf("Write main.go fail! error:%v",err.Error()))
-		})
-	}
-	w.Flush()
-	f.Close()
+	write(mainFile,fmt.Sprintf(MAIN_FILE_TEMPLATE,params.ProjectName))
 
 	message.Success(fmt.Sprintf("Created %v",mainFile))
 }
