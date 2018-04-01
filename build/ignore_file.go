@@ -4,7 +4,6 @@ package build
 import (
 	"github.com/zouyx/gopt/input"
 	"fmt"
-	"github.com/zouyx/gopt/message"
 )
 
 
@@ -20,18 +19,19 @@ const (
 		"\n" +
 		"# Output of the go coverage tool, specifically when used with LiteIDE\n" +
 		"*.out"
+
+	IGNORE_FILE="/.gitignore"
 )
 
 type IgnoreBuilder struct {
 
 }
 
-// dir build method
+// .gitignore build method
 func (this *IgnoreBuilder) Build(params *input.Params) {
 	src := getSrc(params)
-	gitIgnore := src + "/.gitignore"
 
-	write(gitIgnore,fmt.Sprintf(IGNORE_FILE_TEMPLATE))
+	fileName := src + IGNORE_FILE
 
-	message.Success(fmt.Sprintf("Created %v",gitIgnore))
+	write(fileName,fmt.Sprintf(IGNORE_FILE_TEMPLATE))
 }

@@ -47,4 +47,5 @@ func write(fileName,content string)  {
 	w.Flush()
 	f.Close()
 
+	message.Success(fmt.Sprintf("Created %v",fileName))
 }

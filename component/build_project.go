@@ -2,23 +2,23 @@ package component
 
 import (
 	"github.com/zouyx/gopt/input"
-	"container/list"
-	"github.com/zouyx/gopt/build"
+	"github.com/zouyx/gopt/message"
+	"fmt"
 )
-
-var (
-	buildHandlers *list.List
-)
-
-func init() {
-	buildHandlers=list.New()
-	buildHandlers.PushBack((&build.DirBuilder{}).Build)
-	buildHandlers.PushBack((&build.MainFileBuilder{}).Build)
-	buildHandlers.PushBack((&build.IgnoreBuilder{}).Build)
-}
 
 func BuildProject(params *input.Params) {
-	for e := buildHandlers.Front(); e != nil; e = e.Next() {
-		e.Value.(func(*input.Params))(params)
+	switch params.ProjectType {
+	case input.GITHUB_PROJECT_TYPE:
+		BuildGithubProject(params)
+		break
+	case input.NORMAL_PROJECT_TYPE:
+		BuildNormalProject(params)
+		break
+	case input.CUSTOM_PROJECT_TYPE:
+		break
+	default:
+		message.FormatError(func() {
+			fmt.Sprintf("Project type is wrong,type:%v \n",params.ProjectType)
+		})
 	}
 }

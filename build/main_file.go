@@ -2,7 +2,6 @@ package build
 
 import (
 	"github.com/zouyx/gopt/input"
-	"github.com/zouyx/gopt/message"
 	"fmt"
 )
 
@@ -16,6 +15,7 @@ const (
 		"func main() {\n" +
 		"\tfmt.Println(\"welcome to your awesome project: %v!\")\n" +
 		"}\n"
+		MAIN_FILE="/main.go"
 )
 
 
@@ -23,13 +23,11 @@ type MainFileBuilder struct {
 
 }
 
-// dir build method
+// main.go build method
 func (this *MainFileBuilder) Build(params *input.Params) {
 	fullPath := getFullPath(params)
-	mainFile := fullPath + "/main.go"
+	fileName := fullPath + MAIN_FILE
 
-	write(mainFile,fmt.Sprintf(MAIN_FILE_TEMPLATE,params.ProjectName))
-
-	message.Success(fmt.Sprintf("Created %v",mainFile))
+	write(fileName,fmt.Sprintf(MAIN_FILE_TEMPLATE,params.ProjectName))
 }
 

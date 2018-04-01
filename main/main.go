@@ -4,14 +4,16 @@ import (
 	"fmt"
 	"encoding/json"
 	"github.com/zouyx/gopt/component"
+	"github.com/zouyx/gopt/message"
 )
 
 func main() {
 	//get params
 	params := component.GetAllParams()
-	bytes, _ := json.Marshal(params)
 
 	//build
 	component.BuildProject(params)
-	fmt.Println("hello world!",string(bytes))
+
+	bytes, _ := json.Marshal(params)
+	message.Success(fmt.Sprintf("Finished make new project!your params are:%v",string(bytes)))
 }

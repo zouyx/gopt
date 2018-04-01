@@ -22,7 +22,7 @@ reimport() {
     for line in `cat $fileName`
     do
         echo "installing $line!"
-        gopm get "$line" -v -g
+        go get "$line" -v -u
     done
 }
 
