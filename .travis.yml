@@ -15,10 +15,11 @@ before_install:
 script:
 - chmod u+x coverage.sh
 - "./coverage.sh --coveralls"
-- go build -o $TRAVIS_OS_NAME main/main.go
+- echo $TRAVIS_OS_NAME
+- go build -o "gopt" main/main.go
 deploy:
   provider: releases
-  file: $TRAVIS_OS_NAME
+  file: gopt
   api_key:
     secure: PyyuRrm9ks8km0lD5ijjIks6Jn4a1r3XqtxyO4BtLoz5IvQWpBppcq+s09q/oH5UA/wVzCCOd9Nmom1goMGQJP4wmq5LB1VQK4vdL84tF4hX+gVi7fgwjYUILXNXF1QO6h+XmfJo0pHAOIDNN5/fqyKrwF6L7GsR5UvvfWKt3sYOK45U38qyZvuqp9d8DfCiC1GHm937umA/CmRB8126CSoknp1kMDRdOwzX2BNTCAv84ilo/Ich+E9tmtok7QwWxgIeilVJlh9YbLpENVFATtWKsz4wHO/EEMqaNHcVZeknFKwBeVdZLeq+B3dG3Lccpf/HS8UcCeO67aBfsAEn/VQjPUg4fIAXUHitpXwR7s+zJS/knPbBq6sma+MmJ5H24U6r8MehXkiRK1j8mwOrxsV3oXuJTiKheHlF6s1cYKgxj9sMXDsZalcZ773WQ37vSXRSdan2uvQeOpgO/YigDFedU56ONBjUAWo+e4jkiEfnv1yx8AzLblvYr77+izZAv395u/pCliQotevsYIMNs253cnlA/MDFvzznhjAJ9cVhzn8CwWq/cnXnuU/mNpN/7cpytsoGVQ7cddWPNNtik/XxaSQng5Bhtdtsq2hI1eSIRCmpeNHtNgMUvNqMVRAtlnI1f1Mo/X6jN3XcMUOQTG2a2AxTQOM2YvaMq0K0rt4=
   skip_cleanup: true
