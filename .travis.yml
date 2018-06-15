@@ -16,9 +16,7 @@ before_install:
 script:
 - chmod u+x coverage.sh
 - "./coverage.sh --coveralls"
-
-after_success:
-  - ./make.sh
+- ./make.sh
 
 deploy:
   provider: releases
