@@ -1,26 +1,22 @@
 language: go
 sudo: required
-
 go:
-  - 1.7
-  - 1.8
-  - 1.9
-
+- 1.7
+- 1.8
+- 1.9
 env:
-    - GO15VENDOREXPERIMENT="1"
-
+- GO15VENDOREXPERIMENT="1"
 before_install:
-    - go get github.com/mattn/goveralls
-
+- go get github.com/mattn/goveralls
 script:
-    - chmod u+x coverage.sh
-    - ./coverage.sh --coveralls
-    - go build -o "gopt" main/main.go
-
+- chmod u+x coverage.sh
+- "./coverage.sh --coveralls"
+- go build -o "gopt" main/main.go
 deploy:
-    provider: releases
-    file: "gopt"
-    api_key: $GITHUB_OAUTH_TOKEN
-    skip_cleanup: true
-    on:
-       tags: true
+  provider: releases
+  file: gopt
+  api_key:
+    secure: 0sUiMLP/oZCFMXXcxSwu3nOrk+Gtm0pyuiBiKsoc2SfIXoNbz2KSHbf/d5JAZ5A85ekwQFS47vk6h3+5F56NmdLsx4YcBWFjNPDFHgUO+nK9iIZleO4Pm2pff5jrRMOcefmPR7Ys3tPvxtbBIPQJj1r+PN2kxwvPpr98pZ24H8zuggE3iY39+IzXIs50qTtdh0qQq7T8o2D6Y+6ot0AP2qk3HxCwb2RFVDFTZkUlVaSXebdbTqIyGTqnrjq6haoo/9oK3QBHf+XNiN6l/UACBkLD1QzfetvAHs46hQSWXB9ANOCh0oX+jLolZk41wIKQNEB2yEkqD/R9cYhQqCOOKsLxLcb9lR/8pyuH4Y6BnxA8PqcF1xZoUyOs+56nIWao4yfuoQVz1721F6fK5UCmHZsDcOleRFX21ShRonYBpgk1O5u6JUZFlhMf5gwx+euhIQ+62zEqmjAdVjwmGGFcgBVBloLbJsYVx7pkTY0/oQmP8Q+794XaM2hbmgcARfGqCbQVvYTPmK3WFIgI0BlKoYGRGANXxU+SIWa2/LgunRgdbFV0BsHOId7fnE/Uw7+0ziF9bscFK99Bto3r9DAeuBgzVnf0089iD1dUPPEourF4wkxAWlmeV3Z/xvpKu3S4ELR5LzELwQk1TFwRUMzpsf944HT3ecaomUYOPDkmP+k=
+  skip_cleanup: true
+  on:
+    tags: true
