@@ -16,3 +16,11 @@ script:
     - chmod u+x coverage.sh
     - ./coverage.sh --coveralls
     - go build -o "gopt" main/main.go
+
+deploy:
+    provider: releases
+    file: "gopt"
+    api_key: $GITHUB_OAUTH_TOKEN
+    skip_cleanup: true
+    on:
+       tags: true

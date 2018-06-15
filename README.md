@@ -1,6 +1,6 @@
 # gopt - Make create Golang project easily
 
-[![Build Status](https://travis-ci.org/zouyx/agollo.svg?branch=master)](https://travis-ci.org/zouyx/agollo)
+[![Build Status](https://travis-ci.org/zouyx/gopt.svg?branch=master)](https://travis-ci.org/zouyx/gopt)
 [![codebeat badge](https://codebeat.co/badges/e9bd6a7c-f38e-4d99-90d0-0999e78bf99d)](https://codebeat.co/projects/github-com-zouyx-gopt-master)
 [![Coverage Status](https://coveralls.io/repos/github/zouyx/gopt/badge.svg?branch=master)](https://coveralls.io/github/zouyx/gopt?branch=master)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
