@@ -14,7 +14,7 @@ before_install:
 script:
 - chmod u+x coverage.sh
 - "./coverage.sh --coveralls"
-- go build -o "gopt_$TRAVIS_OS_NAME" main/main.go
+- go build -o "gopt_"$TRAVIS_OS_NAME main/main.go
 deploy:
   provider: releases
   file: gopt_$TRAVIS_OS_NAME
