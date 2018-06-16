@@ -25,6 +25,7 @@ script:
 jobs:
   include:
       - stage: Build
+        if: tag IS blank
         go: 1.9
         script:
          - echo "Build apps ..."
