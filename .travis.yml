@@ -13,8 +13,9 @@ env:
 before_install:
 - go get github.com/mattn/goveralls
 
-      - stage: Test
-        script:
+jobs:
+  include:
+      - script:
         - chmod u+x coverage.sh
         - "./coverage.sh --coveralls"
       - stage: GitHub Release
