@@ -19,5 +19,3 @@ GOOS=darwin  GOARCH=386   go build -o ./dist/${bin_name}_darwin_386 main/main.go
 
 echo "making darwin_64..."
 GOOS=darwin  GOARCH=amd64 go build -o ./dist/${bin_name}_darwin_64 main/main.go
-
-cp dist/* .

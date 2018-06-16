@@ -15,17 +15,17 @@ before_install:
 script:
 - chmod u+x coverage.sh
 - "./coverage.sh --coveralls"
-- ./make.sh
+- sh -x /make.sh
 
 deploy:
   provider: releases
   file:
-      - "dist/darwin_386_gopt.zip"
-      - "dist/darwin_64_gopt.zip"
-      - "dist/linux_386_gopt.zip"
-      - "dist/linux_64_gopt.zip"
-      - "dist/windows_386_gopt.zip"
-      - "dist/windows_64_gopt.zip"
+      - "dist/gopt_darwin_386"
+      - "dist/gopt_darwin_64"
+      - "dist/gopt_linux_386"
+      - "dist/gopt_linux_64"
+      - "dist/gopt_windows_386"
+      - "dist/gopt_windows_64"
   api_key:
     secure: $GITHUB_TOKEN
   skip_cleanup: true
