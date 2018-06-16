@@ -13,16 +13,24 @@ env:
 before_install:
 - go get github.com/mattn/goveralls
 
+stages:
+  - build
+  - test
+  - release
+
+script:
+  - chmod u+x coverage.sh
+  - "./coverage.sh --coveralls"
+
 jobs:
   include:
-      - script:
-        - chmod u+x coverage.sh
-        - "./coverage.sh --coveralls"
-      - stage: GitHub Release
+      - stage: build
+        go: 1.9
         script:
-        - echo "Deploying to GitHub releases ..."
-        - chmod u+x make.sh
-        - ./make.sh
+         - echo "Deploying to GitHub releases ..."
+         - chmod u+x make.sh
+         - ./make.sh
+      - stage: release
         deploy:
           provider: releases
           file:
