@@ -19,6 +19,7 @@ func init() {
 	buildGithubHandlers.PushBack((&build.PackageBuilder{}).Build)
 	buildGithubHandlers.PushBack((&build.ReadMeBuilder{}).Build)
 	buildGithubHandlers.PushBack((&build.TravisBuilder{}).Build)
+	buildGithubHandlers.PushBack((&build.MainFileBuilder{}).Build)
 }
 
 func BuildGithubProject(params *input.Params) {
