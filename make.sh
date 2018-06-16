@@ -2,15 +2,22 @@
 
 bin_name=gopt
 
-GOOS=linux   GOARCH=amd64 go build -o ./dist/linux_64_${bin_name}
-GOOS=linux   GOARCH=386   go build -o ./dist/linux_386_${bin_name}
-GOOS=windows GOARCH=386   go build -o ./dist/windows_386_${bin_name}.exe
-GOOS=windows GOARCH=amd64 go build -o ./dist/windows_64_${bin_name}.exe
-GOOS=darwin  GOARCH=386   go build -o ./dist/darwin_386_${bin_name}
-GOOS=darwin  GOARCH=amd64 go build -o ./dist/darwin_64_${bin_name}
+echo "making linux_64..."
+GOOS=linux   GOARCH=amd64 go build -o ./dist/${bin_name}_linux_64 main/main.go
 
-cd dist
+echo "making linux_386..."
+GOOS=linux   GOARCH=386   go build -o ./dist/${bin_name}_linux_386 main/main.go
 
-pwd
+echo "making windows_386..."
+GOOS=windows GOARCH=386   go build -o ./dist/${bin_name}_windows_386.exe main/main.go
 
-cd -
+echo "making windows_64..."
+GOOS=windows GOARCH=amd64 go build -o ./dist/${bin_name}_windows_64.exe main/main.go
+
+echo "making darwin_386..."
+GOOS=darwin  GOARCH=386   go build -o ./dist/${bin_name}_darwin_386 main/main.go
+
+echo "making darwin_64..."
+GOOS=darwin  GOARCH=amd64 go build -o ./dist/${bin_name}_darwin_64 main/main.go
+
+cp dist/* .
