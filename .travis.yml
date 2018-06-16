@@ -15,13 +15,14 @@ before_install:
 script:
 - chmod u+x coverage.sh
 - "./coverage.sh --coveralls"
-- chmod u+x make.sh
-- ./make.sh
 
 jobs:
   include:
   - stage: GitHub Release
-        script: echo "Deploying to GitHub releases ..."
+        script:
+        - echo "Deploying to GitHub releases ..."
+        - chmod u+x make.sh
+        - ./make.sh
         deploy:
           provider: releases
           file:
