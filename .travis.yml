@@ -31,6 +31,7 @@ jobs:
          - chmod u+x make.sh
          - ./make.sh
       - stage: Github Release
+        if: tag =~ ^v
         deploy:
           provider: releases
           file:
