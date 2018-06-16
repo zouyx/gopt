@@ -18,17 +18,21 @@ script:
 - chmod u+x make.sh
 - ./make.sh
 
-deploy:
-  provider: releases
-  file:
-      - "dist/gopt_darwin_386"
-      - "dist/gopt_darwin_64"
-      - "dist/gopt_linux_386"
-      - "dist/gopt_linux_64"
-      - "dist/gopt_windows_386"
-      - "dist/gopt_windows_64"
-  api_key:
-    secure: $GITHUB_TOKEN
-  skip_cleanup: true
-  on:
-    tags: true
+jobs:
+  include:
+  - stage: GitHub Release
+        script: echo "Deploying to GitHub releases ..."
+        deploy:
+          provider: releases
+          file:
+              - "dist/gopt_darwin_386"
+              - "dist/gopt_darwin_64"
+              - "dist/gopt_linux_386"
+              - "dist/gopt_linux_64"
+              - "dist/gopt_windows_386"
+              - "dist/gopt_windows_64"
+          api_key:
+            secure: $GITHUB_TOKEN
+          skip_cleanup: true
+          on:
+            tags: true
