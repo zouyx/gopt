@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![GoDoc](http://godoc.org/github.com/zouyx/gopt?status.svg)](http://godoc.org/github.com/zouyx/gopt)
 [![GitHub release](https://img.shields.io/github/release/zouyx/gopt.svg)](https://github.com/zouyx/gopt/releases)
-[EN](README.md)
+
 
 让各大Gopher不用再为Golang的目录结构苦恼。
 
@@ -16,6 +16,7 @@
 
 通过该工具直接生成的代码，可直接进入开发阶段。
 
+[English document](README.md)
 
 Installation
 ------------
