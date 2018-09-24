@@ -1,4 +1,4 @@
-# gopt - Make create Golang project easily 
+# gopt - Make create Golang project easily
 
 [![Build Status](https://travis-ci.org/zouyx/gopt.svg?branch=master)](https://travis-ci.org/zouyx/gopt)
 [![codebeat badge](https://codebeat.co/badges/e9bd6a7c-f38e-4d99-90d0-0999e78bf99d)](https://codebeat.co/projects/github-com-zouyx-gopt-master)
@@ -7,28 +7,30 @@
 [![GoDoc](http://godoc.org/github.com/zouyx/gopt?status.svg)](http://godoc.org/github.com/zouyx/gopt)
 [![GitHub release](https://img.shields.io/github/release/zouyx/gopt.svg)](https://github.com/zouyx/gopt/releases)
 
-Let the Gopher no longer worry about the directory structure of Golang.
 
-Is there any distress for directory structure of Golang?
+让各大Gopher不用再为Golang的目录结构苦恼。
 
-Is there any distress for Golang's project and how to create directory structures?
+有为Golang的目录结构苦恼过吗？
 
-The code generated directly through the tool can directly enter the development stage.
+有为Golang在github上开源怎么创建目录结构苦恼过吗？
 
-[中文说明](README_ZH.md)
+通过该工具直接生成的代码，可直接进入开发阶段。
+
+[English document](README.md)
 
 Installation
 ------------
 
-Install Go Env [Getting Started](http://golang.org/doc/install.html) .Once finished,then enjoy yourself.
+如果还没有安装Go开发环境，请参考以下文档[Getting Started](http://golang.org/doc/install.html) ，安装完成后，请执行以下命令：
 
-*PS*: Prefer Golang 1.6+
+
+*请注意*: 最好使用Go 1.8+进行开发
 
 # Features
 
-* Generate project directory structure
-* Generate GitHub project directory structure
-* Creating custom project directory structure(not yet supported)
+* 生成普通项目目录结构
+* 生成github项目目录结构
+* 生成自定义项目目录结构（还未支持）
 
 # Usage
 
@@ -36,9 +38,9 @@ Install Go Env [Getting Started](http://golang.org/doc/install.html) .Once finis
 ./build.sh run
 ```
 
-More usage,check test case please.More info check [Wiki](https://github.com/zouyx/gopt/wiki) .
+欢迎查阅 [Wiki](https://github.com/zouyx/gopt/wiki) 或者 [godoc](http://godoc.org/github.com/zouyx/gopt) 获取更多有用的信息
 
-If you think the tool is good or have any problems,must let me know, contact me by email when feel free or create a [Issue](https://github.com/zouyx/gopt/issues).
+如果你觉得该工具还不错或者有问题，一定要让我知道，可以发邮件或者[留言](https://github.com/zouyx/gopt/issues)。
 
 # Contribution
   * Source Code: https://github.com/zouyx/gopt/
