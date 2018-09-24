@@ -1,4 +1,4 @@
-# gopt - Make create Golang project easily
+# gopt - Make create Golang project easily 
 
 [![Build Status](https://travis-ci.org/zouyx/gopt.svg?branch=master)](https://travis-ci.org/zouyx/gopt)
 [![codebeat badge](https://codebeat.co/badges/e9bd6a7c-f38e-4d99-90d0-0999e78bf99d)](https://codebeat.co/projects/github-com-zouyx-gopt-master)
@@ -6,7 +6,6 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![GoDoc](http://godoc.org/github.com/zouyx/gopt?status.svg)](http://godoc.org/github.com/zouyx/gopt)
 [![GitHub release](https://img.shields.io/github/release/zouyx/gopt.svg)](https://github.com/zouyx/gopt/releases)
-[中文](README_ZH.md)
 
 Let the Gopher no longer worry about the directory structure of Golang.
 
@@ -15,6 +14,8 @@ Is there any distress for directory structure of Golang?
 Is there any distress for Golang's project and how to create directory structures?
 
 The code generated directly through the tool can directly enter the development stage.
+
+[中文说明](README_ZH.md)
 
 Installation
 ------------
